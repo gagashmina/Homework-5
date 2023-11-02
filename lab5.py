@@ -1,6 +1,7 @@
 # Создаём список букв
 print('Шифр Цезаря')
 abc ='АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'
+eng_abc = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ'
 while True:
     string = input('Введите текст:   ')
     if string == '0':
@@ -14,8 +15,8 @@ while True:
             out += abc[(index+n*dec)%33]
         except ValueError:
                 try:
-                    index = b_abc.index(string[i])
-                    out += b_abc[(index+n*dec)%33]
+                    index = eng_abc.index(string[i].upper())
+                    out += eng_abc[(index+n*dec)%33]
                 except ValueError:
                     out += string[i]
     print(out)
